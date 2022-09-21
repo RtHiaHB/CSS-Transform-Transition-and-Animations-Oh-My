@@ -9,6 +9,7 @@
   animation-name: middle;
   animation-duration: .1s;
   animation-fill-mode: forwards;
+  /* background-color:mediumvioletred; */
 }
 
 .hamburger:hover > div:nth-child(3){
@@ -27,17 +28,35 @@ nav {
   opacity: 1;
 }
 
+/*rotate top and lower it*/
 @keyframes top {
-  from {}
-  to {}
+  from {
+    transform:matrix(1, 0, 0, 1, 0, 0);
+  }
+  to {
+    transform:matrix(1, 1.1, -.75, 1, 0, 35);
+  }
 }
 
+/* make the middle bar disappear.*/
 @keyframes middle {
-  from {}
-  to {}
+  from {
+    background-color: rebeccapurple;
+  }
+  to {
+    background-color:mediumvioletred;
+  }
 }
 
+/*rotate bottom and lift it up so that the middle aligns with
+the middle of the main box */
 @keyframes bottom {
-  from {}
-  to {}
+  from {
+    transform: matrix(1, 0, 0, 1, 0, 0);
+    /* transform:translateY(0px); */
+  }
+  to {
+    transform: matrix(1, -1.1, 0.75, 1, 0, -35);
+    /* transform:translateY(-310%); */
+  }
 }
